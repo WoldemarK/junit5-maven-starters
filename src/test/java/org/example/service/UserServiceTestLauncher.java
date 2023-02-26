@@ -1,5 +1,6 @@
+package org.example.service;
+
 import org.example.model.User;
-import org.example.service.UserService;
 import org.junit.jupiter.api.*;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 @TestInstance(TestInstance.Lifecycle.PER_METHOD)
-public class UserServiceTest {
+public class UserServiceTestLauncher {
     private UserService userService;
 
     @BeforeAll
