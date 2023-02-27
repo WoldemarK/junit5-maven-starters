@@ -1,5 +1,6 @@
 package org.example.service;
 
+import org.assertj.core.api.Assertions;
 import org.example.model.User;
 import org.junit.jupiter.api.*;
 
@@ -30,6 +31,7 @@ public class UserServiceTestLauncher {
     void usersEmptyIfNoUserAdded() {
         System.out.println("Test 1: " + this);
         List<User> users = userService.getAll();
+
         assertTrue(users.isEmpty());
     }
 
@@ -45,7 +47,7 @@ public class UserServiceTestLauncher {
     @Test
     void loginFailIfPasswordIsNotCorrect() {
         userService.add(IVAN);
-        Optional<User>user = userService.login(IVAN.getUsername(), "123");
+        Optional<User> user = userService.login(IVAN.getUsername(), "123");
 
         assertTrue(user.isPresent());
 
@@ -58,13 +60,16 @@ public class UserServiceTestLauncher {
         userService.add(PETER);
 
         List<User> users = userService.getAll();
-        assertEquals(2, users.size());
+
+        Assertions.assertThat(users).hasSize(2);
+        // assertEquals(2, users.size());
     }
 
     @AfterEach
     void deleteDateFromDatabase() {
         System.out.println("AfterEach: " + this);
     }
+
     @AfterAll
     static void close() {
         System.out.println("After All: ");
