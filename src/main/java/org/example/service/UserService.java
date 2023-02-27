@@ -16,7 +16,6 @@ public class UserService {
     public boolean add(User user) {
         return this.users.add(user);
     }
-
     public Optional<User> login(String name, String password) {
         return this.users
                 .stream()

@@ -6,5 +6,4 @@ public class User {
     long id;
     String username;
     String password;
-
 }

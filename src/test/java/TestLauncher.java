@@ -19,7 +19,6 @@ public class TestLauncher {
                 .build();
 
         launcher.execute(request,summaryGeneratingListener);
-
         try (PrintWriter writer = new PrintWriter(System.out)){
             summaryGeneratingListener.getSummary().printTo(writer);
         }

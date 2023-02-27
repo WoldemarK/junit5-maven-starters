@@ -65,7 +65,6 @@ public class UserServiceTestLauncher {
     void deleteDateFromDatabase() {
         System.out.println("AfterEach: " + this);
     }
-
     @AfterAll
     static void close() {
         System.out.println("After All: ");
